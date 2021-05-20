@@ -31,7 +31,7 @@ train:
       md5: 719777d956ee1d0ee2db2c95b2e0b1e6
   outs:
     - path: training/model-best
-      md5: aadce47f833c54b77c38d4c4c427d3b2
+      md5: 438d3758dc46201c9ad31162df07c935
   spacy_version: 3.0.5
   spacy_git_version: 53a3b967a
 evaluate:
@@ -42,10 +42,10 @@ evaluate:
     - path: corpus/dev.spacy
       md5: 719777d956ee1d0ee2db2c95b2e0b1e6
     - path: training/model-best
-      md5: aadce47f833c54b77c38d4c4c427d3b2
+      md5: 438d3758dc46201c9ad31162df07c935
   outs:
     - path: training/metrics.json
-      md5: cbe047a9dc7d6aabcb6873388b3a6cf5
+      md5: 2771370d1d10ef55b92e5edfe367c7c0
   spacy_version: 3.0.5
   spacy_git_version: 53a3b967a
 package:
@@ -55,9 +55,9 @@ package:
       --version 0.0.0 --force
   deps:
     - path: training/model-best
-      md5: aadce47f833c54b77c38d4c4c427d3b2
+      md5: 438d3758dc46201c9ad31162df07c935
   outs:
     - path: packages/en_tech_topic_model-0.0.0/dist/en_tech_topic_model-0.0.0.tar.gz
-      md5: 2f31063cdc1076b77febd01b26e07c92
+      md5: a7db49099e405046b4075391e7ab643b
   spacy_version: 3.0.5
   spacy_git_version: 53a3b967a

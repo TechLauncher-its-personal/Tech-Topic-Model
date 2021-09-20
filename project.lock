@@ -5,16 +5,16 @@ convert:
     - python scripts/convert.py en assets/tech_topic_eval.jsonl corpus/dev.spacy
   deps:
     - path: assets/tech_topic_training.jsonl
-      md5: 65b8f9738230aac7e69735012875c0d4
+      md5: 34cd4249c9dea679e3e06277279e67f6
     - path: assets/tech_topic_eval.jsonl
-      md5: d90c403966dd7fa9745b8034f99b9642
+      md5: 78cb5077e450c50c1bee01aff423570e
     - path: scripts/convert.py
       md5: 81a27c7679f32363bca9cbcd12a366d7
   outs:
     - path: corpus/train.spacy
-      md5: 27bb6482cfd3dc26a6fdfabdd2ca88a6
+      md5: 13fda4fdb98476a98c6f93460ac6bf2e
     - path: corpus/dev.spacy
-      md5: 719777d956ee1d0ee2db2c95b2e0b1e6
+      md5: 4b8e0e633593d0b2ab3833e64185d3f1
   spacy_version: 3.0.5
   spacy_git_version: 53a3b967a
 train:
@@ -26,12 +26,12 @@ train:
     - path: configs/config.cfg
       md5: a816f3124515782349856290f1d7f384
     - path: corpus/train.spacy
-      md5: 27bb6482cfd3dc26a6fdfabdd2ca88a6
+      md5: 13fda4fdb98476a98c6f93460ac6bf2e
     - path: corpus/dev.spacy
-      md5: 719777d956ee1d0ee2db2c95b2e0b1e6
+      md5: 4b8e0e633593d0b2ab3833e64185d3f1
   outs:
     - path: training/model-best
-      md5: 438d3758dc46201c9ad31162df07c935
+      md5: e51725f4c5895c23407d1876504547d4
   spacy_version: 3.0.5
   spacy_git_version: 53a3b967a
 evaluate:
@@ -40,12 +40,12 @@ evaluate:
     - python -m spacy evaluate training/model-best corpus/dev.spacy --output training/metrics.json
   deps:
     - path: corpus/dev.spacy
-      md5: 719777d956ee1d0ee2db2c95b2e0b1e6
+      md5: 4b8e0e633593d0b2ab3833e64185d3f1
     - path: training/model-best
-      md5: 438d3758dc46201c9ad31162df07c935
+      md5: e51725f4c5895c23407d1876504547d4
   outs:
     - path: training/metrics.json
-      md5: 2771370d1d10ef55b92e5edfe367c7c0
+      md5: 0143439bf09aa1b4521b122bc1fc595d
   spacy_version: 3.0.5
   spacy_git_version: 53a3b967a
 package:
@@ -55,9 +55,9 @@ package:
       --version 0.0.0 --force
   deps:
     - path: training/model-best
-      md5: 438d3758dc46201c9ad31162df07c935
+      md5: e51725f4c5895c23407d1876504547d4
   outs:
     - path: packages/en_tech_topic_model-0.0.0/dist/en_tech_topic_model-0.0.0.tar.gz
-      md5: a7db49099e405046b4075391e7ab643b
+      md5: 904c8494fbda6615fa58d48c073e6489
   spacy_version: 3.0.5
   spacy_git_version: 53a3b967a

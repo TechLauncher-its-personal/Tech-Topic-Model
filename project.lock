@@ -55,9 +55,9 @@ package:
       --version 0.0.0 --force
   deps:
     - path: training/model-best
-      md5: e51725f4c5895c23407d1876504547d4
+      md5: 84131c3dd7964cacae24294b20642a8d
   outs:
     - path: packages/en_tech_topic_model-0.0.0/dist/en_tech_topic_model-0.0.0.tar.gz
-      md5: 904c8494fbda6615fa58d48c073e6489
+      md5: a513213732cf031c57903c6be0efb631
   spacy_version: 3.0.5
   spacy_git_version: 53a3b967a

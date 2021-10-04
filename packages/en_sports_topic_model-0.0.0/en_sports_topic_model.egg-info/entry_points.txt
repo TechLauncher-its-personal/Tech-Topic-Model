@@ -1,3 +1,0 @@
-[spacy_models]
-en_sports_topic_model = en_sports_topic_model
-
